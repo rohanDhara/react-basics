@@ -1,5 +1,5 @@
-
-function createElement(customElement,mainContainer){
+// we are writting our render function and defining our element that's why it is working 
+function customRender(customElement,mainContainer){
     /*
     const element=document.createElement(customElement.type)
     element.innerHTML = customElement.children
@@ -28,4 +28,4 @@ const customElement = {
 
 const mainContainer = document.querySelector('#root')
 
-createElement(customElement,mainContainer);
+customRender(customElement,mainContainer);
