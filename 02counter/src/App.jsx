@@ -1,33 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  let initialinitialCounter = 0;
+  const [counter,setCounter] = useState(initialinitialCounter)
+
+  const increment = () => {
+    setCounter(counter + 1)
+  }
+  const decrement = () => {
+    if(counter>0){
+      setCounter(counter - 1)
+    }
+    console.log(counter);
+  }
   return (
     <>
+      <h1>Rohan Dhara Counter {counter}</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <div className='buttons-container'><button onClick={increment}>+</button></div>
+        <div className='buttons-container'><h3>{counter}</h3></div>
+        <div className='buttons-container'><button onClick={decrement}>-</button></div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div>
+        <p style={{fontSize:"33px"}}>Counter value is {counter}</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
